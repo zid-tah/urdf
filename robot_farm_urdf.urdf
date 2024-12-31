@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robot_farm_urdf">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0001212 -0.12818 -0.00035728"
+        rpy="0 0 0" />
+      <mass
+        value="878.22" />
+      <inertia
+        ixx="603.42"
+        ixy="-5.4119E-16"
+        ixz="-1.0297E-17"
+        iyy="671.34"
+        iyz="-4.3018E-14"
+        izz="77.581" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_farm_urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_farm_urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="gantry_Link">
+    <inertial>
+      <origin
+        xyz="0.024846 0.5392 0.30981"
+        rpy="0 0 0" />
+      <mass
+        value="1.2735" />
+      <inertia
+        ixx="0.069664"
+        ixy="-7.1424E-14"
+        ixz="8.96E-05"
+        iyy="0.011062"
+        iyz="2.0085E-17"
+        izz="0.062316" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_farm_urdf/meshes/gantry_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_farm_urdf/meshes/gantry_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gantry_joint"
+    type="prismatic">
+    <origin
+      xyz="-0.55695 -0.377 -0.37281"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="gantry_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.65"
+      upper="0.33"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <link
+    name="crossslide_Link">
+    <inertial>
+      <origin
+        xyz="-0.00027355 0.042872 -0.0039373"
+        rpy="0 0 0" />
+      <mass
+        value="0.16108" />
+      <inertia
+        ixx="0.00020541"
+        ixy="4.3839E-07"
+        ixz="-1.7224E-11"
+        iyy="0.00020561"
+        iyz="1.4827E-14"
+        izz="0.0004087" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_farm_urdf/meshes/crossslide_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_farm_urdf/meshes/crossslide_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="crossslide_joint"
+    type="prismatic">
+    <origin
+      xyz="0.05525 0.38125 0.575"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="gantry_Link" />
+    <child
+      link="crossslide_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.09"
+      upper="0.2"
+      effort="200"
+      velocity="3" />
+  </joint>
+  <link
+    name="zaxis_Link">
+    <inertial>
+      <origin
+        xyz="-8.3267E-17 3.3862E-15 0.5"
+        rpy="0 0 0" />
+      <mass
+        value="0.15345" />
+      <inertia
+        ixx="0.012793"
+        ixy="4.2038E-21"
+        ixz="1.6216E-18"
+        iyy="0.012793"
+        iyz="-8.7031E-17"
+        izz="1.2609E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_farm_urdf/meshes/zaxis_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_farm_urdf/meshes/zaxis_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="zaxis_joint"
+    type="prismatic">
+    <origin
+      xyz="0.02 -0.409 -0.01825"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="crossslide_Link" />
+    <child
+      link="zaxis_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.1"
+      upper="0"
+      effort="200"
+      velocity="3" />
+  </joint>
+</robot>
